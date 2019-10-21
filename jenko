@@ -1,7 +1,7 @@
 @Library('github.com/cloudogu/ces-build-lib@6cd41e0')
 import com.cloudogu.ces.cesbuildlib.*
 
-Git git = new Git(this)
+Git git = new Git(this,'GITHUB_CREDENTIAL')
 
 
 
