@@ -7,7 +7,7 @@ node {
     git 'https://github.com/forpix/Demo_1.git'
      git.clean('".*/"')
     sh 'git checkout develop;touch ali.txt;pwd;ls -a'
-    git.commitHashShort
+   println 'the commit id is'+ git.commitHashShort
     git.repositoryUrl
     git.gitHubRepositoryName
     git.branchName
