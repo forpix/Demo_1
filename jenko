@@ -10,10 +10,10 @@ stage('Checkout') {
   git 'https://github.com/forpix/Num_gener.git'
   /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
   git.clean('".*/"')
-  git.commitHash
+  git.commitHash()
 }
 stage('checkingBranch') {
     
-     git.commitAuthorEmail
+     git.commitAuthorEmail()
   }
 }
