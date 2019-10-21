@@ -6,7 +6,7 @@ node {
   stage('Checkout') {
     git 'https://github.com/forpix/Demo_1.git'
      git.clean('".*/"')
-    sh 'touch ali.txt;pwd;ls -a;git checkout develop'
+    sh 'git checkout develop;touch ali.txt;pwd;ls -a'
   }
   
   stage('comitting') {
