@@ -9,11 +9,12 @@ node {
   }
   
   stage('comitting') {
+    git.clean('".*/"')
     git.add('.')
     git.commit('message', 'forpix', 'forpix321@gmail.com')
     git.commit('added from local')
     /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
-    git.clean('".*/"')
+   
   }
   
   stage ('push') {
