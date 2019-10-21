@@ -5,7 +5,7 @@ import com.cloudogu.ces.cesbuildlib.*
 
 
 node {
-  Git git = new Git(this,'GITHUB_CREDENTIAL')
+  Git git = new Git(this,'cesmarvin')
   stage('Checkout') {
   git 'https://github.com/forpix/Demo_1.git'
   sh '''
