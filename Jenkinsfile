@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!groovy
 
 node('docker') {
@@ -72,3 +73,22 @@ def libraryFromLocalRepo() {
     // We have to pass an identifier with version (which is ignored). Otherwise the build fails.
     library(identifier: 'ces-build-lib@snapshot', retriever: legacySCM(scm))
 }
+=======
+node {
+stage ('Pull the Code') {
+echo 'nothing'
+}
+stage ('Build') {
+echo 'building the code'
+}
+stage ('ATC'){
+echo 'ATC'
+}
+stage ('Aunit') {
+echo 'Aunit'
+}
+stage ('Deployment'){
+echo 'Done'
+}
+}
+>>>>>>> c6046b58577b8dc3a314fccc21d38323cead00fa
