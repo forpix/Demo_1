@@ -8,10 +8,10 @@ Git git = new Git(this)
 node {
 stage('Checkout') {
   git 'https://github.com/forpix/Num_gener.git'
-   git.commitHash
+  git.simpleBranchName
   /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
   git.clean('".*/"')
-  git.commitHash()
+ 
 }
 stage('checkingBranch') { 
      git.commitAuthorEmail
