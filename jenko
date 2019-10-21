@@ -8,12 +8,13 @@ node {
      git.clean('".*/"')
     sh 'git checkout develop'
     println 'the commit id is'+ git.commitHashShort
-    println 'the repo URL is'+git.repositoryUrl
-    println 'the repo name is'+git.gitHubRepositoryName
-    println 'the branch is'+git.branchName
+    println 'the repo URL is'+ git.repositoryUrl
+    println 'the repo name is'+ git.gitHubRepositoryName
+    println 'the branch is'+ git.branchName
   }
   
   stage('comitting') {
+    sh'git pull origin develop'
     git.add('.')
     git.commit('message', 'forpix', 'forpix321@gmail.com')
     git.commit('added from local')
