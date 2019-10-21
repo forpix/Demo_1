@@ -6,11 +6,11 @@ node {
   stage('Checkout') {
     git 'https://github.com/forpix/Demo_1.git'
      git.clean('".*/"')
-    sh 'git checkout develop;touch ali.txt;pwd;ls -a'
-   println 'the commit id is'+ git.commitHashShort
-    git.repositoryUrl
-    git.gitHubRepositoryName
-    git.branchName
+    sh 'git checkout develop'
+    println 'the commit id is'+ git.commitHashShort
+    println 'the repo URL is'+git.repositoryUrl
+    println 'the repo name is'+git.gitHubRepositoryName
+    println 'the branch is'+git.branchName
   }
   
   stage('comitting') {
