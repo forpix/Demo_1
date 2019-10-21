@@ -10,7 +10,7 @@ stage('Checkout') {
   git 'https://github.com/forpix/Demo_1.git'
   sh '''
   touch ali.txt
-  pwd;ls -a;git add.
+  pwd;ls -a;git add .
   '''
   git.commit('added from library cli', 'forpix', 'forpix321@gmail.com')
   /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
