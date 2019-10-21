@@ -1,13 +1,15 @@
 @Library('github.com/cloudogu/ces-build-lib@6cd41e0')
 import com.cloudogu.ces.cesbuildlib.*
 
-Git git = new Git(this,'GITHUB_CREDENTIAL')
 
 
 
 node {
 stage('Checkout') {
+Git git = new Git(this,'GITHUB_CREDENTIAL')
+
   git 'https://github.com/forpix/Demo_1.git'
+  
   sh '''
   touch ali.txt
   pwd;ls -a
