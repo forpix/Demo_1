@@ -15,8 +15,8 @@ node {
   
   stage('comitting') {
     sh'git pull origin develop'
-    git.add('.')
-    git.commit('message', 'forpix', 'forpix321@gmail.com')
+    sh 'rm -rf test.txt test1.txt;git add -A '
+    git.commit('removed the test test1', 'forpix', 'forpix321@gmail.com')
     git.commit('added from local')
     
   }
