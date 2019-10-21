@@ -4,7 +4,6 @@ import com.cloudogu.ces.cesbuildlib.*
 node {
 stage('Checkout') {
      checkout scm
-     git.clean('".*/"')
      }
 stage('checkingBranch') {
      git.branchName
