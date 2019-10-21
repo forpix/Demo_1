@@ -2,21 +2,24 @@
 import com.cloudogu.ces.cesbuildlib.*
 
 node {
-    Git git = new Git(this, 'cesmarvin')
+  Git git = new Git(this, 'cesmarvin')
   stage('Checkout') {
-  git 'https://github.com/forpix/Demo_1.git'
-  sh '''
-  touch ali.txt
-  pwd;ls -a
-  '''
-  git.add('.')
-  git.commit('message', 'forpix', 'forpix321@gmail.com')
-  git.commit('added from local')
-  /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
-  git.clean('".*/"')
- 
-}
-stage('checkingBranch') { 
-     git.commitAuthorEmail
+    git 'https://github.com/forpix/Demo_1.git'
+    sh 'touch ali.txt;pwd;ls -a;git checkout develop'
+  }
+  
+  stage('comitting') {
+    git.add('.')
+    git.commit('message', 'forpix', 'forpix321@gmail.com')
+    git.commit('added from local')
+    /* Don't remove folders starting in "." like .m2 (maven), .npm, .cache, .local (bower), etc. */
+    git.clean('".*/"')
+  }
+  
+  stage ('push') {
+    git.push('develop')
+    }
+   stage('checkingBranch') { 
+    git.commitHashShort
   }
 }
